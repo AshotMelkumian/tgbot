@@ -1,14 +1,15 @@
 import asyncio
 import logging
+import os
 from aiogram import Bot, Dispatcher, F, types
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.fsm.state import StatesGroup, State
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.storage.memory import MemoryStorage
 
-# Токен бота
-API_TOKEN = "8240037774:AAEuuV56aCRhS_4bHaILvNWryFym-LOgqqM"
-ADMIN_ID = 1079780648  # <-- твой Telegram ID
+# --- переменные окружения ---
+API_TOKEN = os.getenv("API_TOKEN")  # токен бота
+ADMIN_ID = int(os.getenv("ADMIN_ID"))  # твой Telegram ID
 
 logging.basicConfig(level=logging.INFO)
 
